@@ -10,7 +10,7 @@ branches:
 before_install:
 # Decrypt the private key
 - openssl aes-256-cbc -K $encrypted_af62f0936c1a_key -iv $encrypted_af62f0936c1a_iv
-  -in mountainside_id_rsa.enc -out ~\/.ssh/mountainside_id_rsa -d
+  -in .travis/mountainside_id_rsa.enc -out ~\/.ssh/mountainside_id_rsa -d
 # Set the permission of the key
 - chmod 600 ~/.ssh/mountainside_id_rsa
 # Start SSH agent
