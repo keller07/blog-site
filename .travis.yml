@@ -27,6 +27,7 @@ install:
 - npm install hexo-cli -g
 - npm install hexo --save
 - npm install
+
 script:
 - hexo clean
 - hexo generate
