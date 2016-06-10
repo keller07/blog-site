@@ -6,7 +6,7 @@ branches:
   - master
 before_install:
 - openssl aes-256-cbc -K $encrypted_ebbad52ff68d_key -iv $encrypted_ebbad52ff68d_iv
-  -in .travis/mountainside_id_rsa.enc -out ~\/.ssh/mountainside_id_rsa -d
+  -in .travis/mountainside_id_rsa.enc -out ~/.ssh/mountainside_id_rsa -d
 - chmod 600 ~/.ssh/mountainside_site_id_rsa
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/mountainside_site_id_rsa
