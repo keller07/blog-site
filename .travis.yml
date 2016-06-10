@@ -1,30 +1,4 @@
-<<<<<<< HEAD
-language: node_js
-node_js:
-- 4.4.5
-branches:
-  only:
-  - master
-before_install:
-- openssl aes-256-cbc -K $encrypted_ebbad52ff68d_key -iv $encrypted_ebbad52ff68d_iv
-  -in mountainside_id_rsa.enc -out ~\/.ssh/mountainside_id_rsa -d
-- openssl aes-256-cbc -K $encrypted_af62f0936c1a_key -iv $encrypted_af62f0936c1a_iv
-  -in .travis/blog_site_id_rsa.enc -out ~/.ssh/blog_site_id_rsa -d
-- chmod 600 ~/.ssh/blog_site_id_rsa
-- eval $(ssh-agent)
-- ssh-add ~/.ssh/blog_site_id_rsa
-- cp .travis/ssh_config ~/.ssh/config
-- git config --global user.name "keller07"
-- git config --global user.email "keller.rd@foxmail.com"
-install:
-- npm install hexo-cli -g
-- npm install hexo --save
-- npm install
-script:
-- hexo clean
-- hexo generate
-- hexo deploy
-=======
+
 language: node_js
 
 node_js:
@@ -38,11 +12,11 @@ before_install:
 # Decrypt the private key
 - openssl aes-256-cbc -K $encrypted_ebbad52ff68d_key -iv $encrypted_ebbad52ff68d_iv -in mountainside_id_rsa.enc -out ~\/.ssh/mountainside_id_rsa -d
 # Set the permission of the key
-- chmod 600 ~/.ssh/blog_site_id_rsa
+- chmod 600 ~/.ssh/mountainside_site_id_rsa
 # Start SSH agent
 - eval $(ssh-agent)
 # Add the private key to the system
-- ssh-add ~/.ssh/blog_site_id_rsa
+- ssh-add ~/.ssh/mountainside_site_id_rsa
 # Copy SSH config
 - cp .travis/ssh_config ~/.ssh/config
 # Set Git config
@@ -58,4 +32,3 @@ script:
 - hexo clean
 - hexo generate
 - hexo deploy
->>>>>>> 733a5a4e4a4bd837e25e6a1727f2d6fa15f31059
